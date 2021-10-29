@@ -19,10 +19,7 @@ class user extends Model
         'tel' => 'integer|min:0|max:150'
     );
 
-    // public function getData()
-    // {
-    //     return $this->id . ': ' .$this->name .' ( ' .$this->address. ')';
-    // }
+
 
     // boardsテーブルのレコードを取り出せるようにする
     // public function board()

@@ -17,10 +17,11 @@
         </tr>
         @foreach($items as $item)
         <tr>
-            <td>{{ $item->id }}</td>
+            {{-- <td>{{ $item->id }}</td>
             <td>{{ $item->number_of_people }}</td>
             <td>{{ $item->check_in_day }}</td>
-            <td>{{ $item->check_out_day }}</td>
+            <td>{{ $item->check_out_day }}</td> --}}
+            <td>{{ $item->getData() }}</td>
         </tr>
         @endforeach
     </table>

@@ -13,4 +13,14 @@ class ReservationController extends Controller
         $items = Reservation::all();
         return view('reservation.index',['items' => $items]);
     }
+    public function find(Request $request)
+    {
+        return view('reservation.index',['input' => '']);
+    }
+    public function search(Request $request)
+    {
+        $item = Reservation::find($request->input);
+        $param = ['input' => $request->input, 'item' => $item];
+        return view('reservation.find',$param);
+    }
 }
