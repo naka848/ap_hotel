@@ -9,5 +9,6 @@ Route::get('/user/add','UserController@add');
 Route::post('/user/add','UserController@create');
 
 Route::get('/reservation','ReservationController@index');
-// Route::get('/reservation/find','ReservationController@find');
-// Route::post('/reservation/find','ReservationController@search');
+Route::get('/reservation/add','ReservationController@add');
+Route::post('/reservation/add','ReservationController@create');
+

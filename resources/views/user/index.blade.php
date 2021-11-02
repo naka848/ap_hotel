@@ -7,7 +7,7 @@
     インデックスページ
 @endsection
 
-@section('content')
+{{-- @section('content')
     <table>
         <tr>
             <th>Name</th>
@@ -19,6 +19,29 @@
             <td>{{ $item->name }}</td>
             <td>{{ $item->address }}</td>
             <td>{{ $item->tel }}</td>
+        </tr>
+        @endforeach
+    </table>
+@endsection --}}
+
+@section('content')
+    <table>
+        <tr>
+            <th>User</th>
+            <th>Reservation</th>
+        </tr>
+        @foreach($items as $item)
+        <tr>
+            <td>{{ $item->getData() }}</td>
+            <td>
+                @if ($item->reservations != null)
+                    <table width="100%">
+                        @foreach ($item->reservations as $obj)
+                            <tr><td>{{ $obj->getData() }}</td></tr>
+                        @endforeach
+                    </table>
+                @endif
+            </td>
         </tr>
         @endforeach
     </table>

@@ -13,14 +13,19 @@ class ReservationController extends Controller
         $items = Reservation::all();
         return view('reservation.index',['items' => $items]);
     }
-    // public function find(Request $request)
-    // {
-    //     return view('reservation.index',['input' => '']);
-    // }
-    // public function search(Request $request)
-    // {
-    //     $item = Reservation::find($request->input);
-    //     $param = ['input' => $request->input, 'item' => $item];
-    //     return view('reservation.find',$param);
-    // }
+
+    public function add(Request $request)
+    {
+        return view('reservation.add');
+    }
+
+    public function create(Request $request)
+    {
+        $this->validate($request,Reservation::$rules);
+        $reservation = new Reservation;
+        $form = $request->all();
+        unset($form['_token']);
+        $reservation->fill($form)->save();
+        return redirect('/reservation');
+    }
 }
