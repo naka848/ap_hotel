@@ -4,7 +4,7 @@
 
 @section('menubar')
     @parent
-    客室タイプ一覧
+    部屋種別一覧
 @endsection
 
 @section('content')
@@ -21,8 +21,8 @@
 
     <table>
         <tr>
-            <th>客室タイプID</th>
-            <th>客室タイプ</th>
+            <th>部屋種別タイプID</th>
+            <th>名称</th>
             <th>宿泊可能人数</th>
         </tr>
         @foreach($items as $item)
