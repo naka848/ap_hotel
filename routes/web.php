@@ -16,6 +16,7 @@ Route::post('/reservation/add','ReservationController@create');
 Route::get('/reservation_detail','Reservation_detailController@index');
 
 Route::get('/room_type','Room_typeController@index');
+Route::get('/room_type/list','Room_typeController@list');
 
 Route::get('/room','RoomController@index');
 
