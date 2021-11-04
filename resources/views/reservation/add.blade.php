@@ -8,6 +8,16 @@
 @endsection
 
 @section('content')
+<nav>
+    <ul>
+        <li><a href="{{ url('user/add') }}">利用者登録</a></li>
+        <li><a href="{{ url('reservation/add') }}">予約</a></li>
+        <li><a href="{{ url('user') }}">利用者一覧</a></li>
+        <li><a href="{{ url('reservation') }}">予約一覧</a></li>
+        <li><a href="{{ url('user/list') }}">利用者／予約一覧</a></li>
+</nav>
+<br>
+
 
 {{-- エラー表示を出す --}}
 @if (count($errors) > 0)

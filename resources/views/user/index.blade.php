@@ -4,44 +4,33 @@
 
 @section('menubar')
     @parent
-    インデックスページ
+    利用者一覧
 @endsection
 
-{{-- @section('content')
+@section('content')
+    <nav>
+        <ul>
+            <li><a href="{{ url('user/add') }}">利用者登録</a></li>
+            <li><a href="{{ url('reservation/add') }}">予約</a></li>
+            <li><a href="{{ url('user') }}">利用者一覧</a></li>
+            <li><a href="{{ url('reservation') }}">予約一覧</a></li>
+            <li><a href="{{ url('user/list') }}">利用者／予約一覧</a></li>
+    </nav>
+    <br>
+
     <table>
         <tr>
-            <th>Name</th>
-            <th>Address</th>
-            <th>Tel</th>
+            <th>利用者ID</th>
+            <th>名前</th>
+            <th>住所</th>
+            <th>電話番号</th>
         </tr>
         @foreach($items as $item)
         <tr>
+            <td>{{ $item->id }}</td>
             <td>{{ $item->name }}</td>
             <td>{{ $item->address }}</td>
             <td>{{ $item->tel }}</td>
-        </tr>
-        @endforeach
-    </table>
-@endsection --}}
-
-@section('content')
-    <table>
-        <tr>
-            <th>User</th>
-            <th>Reservation</th>
-        </tr>
-        @foreach($items as $item)
-        <tr>
-            <td>{{ $item->getData() }}</td>
-            <td>
-                @if ($item->reservations != null)
-                    <table width="100%">
-                        @foreach ($item->reservations as $obj)
-                            <tr><td>{{ $obj->getData() }}</td></tr>
-                        @endforeach
-                    </table>
-                @endif
-            </td>
         </tr>
         @endforeach
     </table>

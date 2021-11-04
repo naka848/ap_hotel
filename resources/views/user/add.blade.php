@@ -4,10 +4,20 @@
 
 @section('menubar')
     @parent
-    新規作成ページ
+    利用者登録フォーム
 @endsection
 
 @section('content')
+<nav>
+    <ul>
+        <li><a href="{{ url('user/add') }}">利用者登録</a></li>
+        <li><a href="{{ url('reservation/add') }}">予約</a></li>
+        <li><a href="{{ url('user') }}">利用者一覧</a></li>
+        <li><a href="{{ url('reservation') }}">予約一覧</a></li>
+        <li><a href="{{ url('user/list') }}">利用者／予約一覧</a></li>
+</nav>
+<br>
+
     @if (count($errors)>0)
     <div>
         <ul>
@@ -21,15 +31,15 @@
         <table>
         @csrf
         <tr>
-            <th>name: </th>
+            <th>お名前</th>
             <td><input type="text" name="name" value="{{old('name')}}"></td>
         </tr>
         <tr>
-            <th>address: </th>
+            <th>ご住所</th>
             <td><input type="text" name="address" value="{{old('address')}}"></td>
         </tr>
         <tr>
-            <th>tel: </th>
+            <th>電話番号</th>
             <td><input type="text" name="tel" value="{{old('tel')}}"></td>
         </tr>
         <tr>

@@ -22,8 +22,9 @@ class Reservation extends Model
             'check_out_day' => 'required'
         );
     
-    public function getData()
-    {
-        return $this->reservation_id . ': ' . $this->number_of_people;
-    }
+    // いらなくなった（後で消す）
+    // public function getData()
+    // {
+    //     return $this->reservation_id . ': ' . $this->number_of_people;
+    // }
 }

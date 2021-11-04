@@ -1,5 +1,6 @@
 <html>
 <head>
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <title>@yield('title')</title>
     <style>
         body{
@@ -46,6 +47,21 @@
             color: #999;
             padding: 5px 10px;
         }
+
+        /* nav ul{
+            list-style-type: none;
+        }
+        nav ul li{
+            float: left;
+            width: 100px;
+        }
+        nav ul li a{
+            text-decoration: none;
+            background-color: rgb(153, 182, 235);
+            color: #fff;
+            padding:5px;
+        } */
+
     </style>
 </head>
 <body>

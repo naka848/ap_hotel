@@ -7,6 +7,7 @@ Route::get('/', function () {
 Route::get('/user','UserController@index');
 Route::get('/user/add','UserController@add');
 Route::post('/user/add','UserController@create');
+Route::get('/user/list','UserController@list');
 
 Route::get('/reservation','ReservationController@index');
 Route::get('/reservation/add','ReservationController@add');

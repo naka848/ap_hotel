@@ -17,13 +17,14 @@ class User extends Model
         'tel' => 'integer|min:0|max:150'
     );
 
-    public function getData()
-    {
-        return $this->id . ': ' . $this->name;
-    }
+    // いらなくなった（後で消す）
+    // public function getData()
+    // {
+    //     return $this->id . ': ' . $this->name;
+    // }
 
     // Reservationテーブルのレコードを取り出せるようにする
-    public function board()
+    public function reservations()
     {
         return $this->hasMany('App\Reservation');
     }

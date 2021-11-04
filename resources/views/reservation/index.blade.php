@@ -4,20 +4,32 @@
 
 @section('menubar')
     @parent
-    インデックスページ
+    予約一覧
 @endsection
 
 @section('content')
+<nav>
+    <ul>
+        <li><a href="{{ url('user/add') }}">利用者登録</a></li>
+        <li><a href="{{ url('reservation/add') }}">予約</a></li>
+        <li><a href="{{ url('user') }}">利用者一覧</a></li>
+        <li><a href="{{ url('reservation') }}">予約一覧</a></li>
+        <li><a href="{{ url('user/list') }}">利用者／予約一覧</a></li>
+</nav>
+<br>
+
     <table>
         <tr>
-            <th>User id</th>
-            <th>Number of people</th>
-            <th>Check in day</th>
-            <th>Check out day</th>
+            <th>利用者ID</th>
+            <th>予約ID</th>
+            <th>宿泊人数</th>
+            <th>チェックイン</th>
+            <th>チェックアウト</th>
         </tr>
         @foreach($items as $item)
         <tr>
             <td>{{ $item->user_id }}</td>
+            <td>{{ $item->reservation_id }}</td>
             <td>{{ $item->number_of_people }}</td>
             <td>{{ $item->check_in_day }}</td>
             <td>{{ $item->check_out_day }}</td>

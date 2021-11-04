@@ -28,4 +28,10 @@ class UserController extends Controller
         DB::table('users')->insert($param);
         return redirect('/user');
     }
+
+    public function list(Request $request)
+    {
+        $items = User::all();
+        return view('user.list',['items' => $items]);
+    }
 }
