@@ -1,10 +1,10 @@
 @extends('layouts.helloapp')
 
-@section('title','Room_type.index')
+@section('title','Room.index')
 
 @section('menubar')
     @parent
-    客室タイプ一覧
+    客室一覧
 @endsection
 
 @section('content')
@@ -21,15 +21,15 @@
 
     <table>
         <tr>
+            <th>客室ID</th>
             <th>客室タイプID</th>
-            <th>客室タイプ</th>
-            <th>宿泊可能人数</th>
+            <th>部屋番号</th>
         </tr>
         @foreach($items as $item)
         <tr>
+            <td>{{ $item->room_id }}</td>
             <td>{{ $item->room_type_id }}</td>
-            <td>{{ $item->room_type }}</td>
-            <td>{{ $item->capacity }}</td>
+            <td>{{ $item->room_number }}</td>
         </tr>
         @endforeach
     </table>
