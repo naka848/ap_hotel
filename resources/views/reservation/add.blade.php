@@ -9,10 +9,16 @@
 
 @section('content')
 
-{{-- エラー表示だすやつ --}}
-{{-- @foreach ($errors as $error)
-    <p>{{$error}}</p>    
-@endforeach --}}
+{{-- エラー表示を出す --}}
+@if (count($errors) > 0)
+<div>
+    <ul>
+        @foreach($errors->all() as $error)
+            <li>{{ $error }}
+        @endforeach
+    <ul>
+<div>
+@endif
 
     <form action="/reservation/add" method="post">
         <table>
