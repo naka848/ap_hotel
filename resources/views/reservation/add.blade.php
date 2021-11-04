@@ -15,6 +15,7 @@
         <li><a href="{{ url('user') }}">利用者一覧</a></li>
         <li><a href="{{ url('reservation') }}">予約一覧</a></li>
         <li><a href="{{ url('user/list') }}">利用者／予約一覧</a></li>
+    </ul>
 </nav>
 <br>
 
