@@ -4,7 +4,7 @@
 
 @section('menubar')
     @parent
-    部屋／部屋種別一覧
+    予約／利用者一覧
 @endsection
 
 @section('content')
@@ -16,6 +16,7 @@
         <li><a href="{{ url('reservation') }}">予約一覧</a></li>
         <li><a href="{{ url('reservation_detail') }}">予約詳細一覧</a></li>
         <li><a href="{{ url('user/list') }}">利用者／予約一覧</a></li>
+        <li><a href="{{ url('reservation/list') }}">予約／利用者一覧</a></li>
         <li><a href="{{ url('room') }}">部屋一覧</a></li>
         <li><a href="{{ url('room_type') }}">部屋種別一覧</a></li>
         <li><a href="{{ url('room_type/list') }}">部屋／部屋種別一覧</a></li>
@@ -25,20 +26,23 @@
 
     <table>
         <tr>
-            <th>部屋種別ID</th>
-            <th>名称</th>
-            <th>宿泊可能人数</th>
-            <th>部屋ID</th>
-            <th>部屋番号</th>
+            <th>予約ID</th>
+            <th>宿泊人数</th>
+            <th>チェックイン</th>
+            <th>チェックアウト</th>
+            <th>利用者ID</th>
+            <th>名前</th>
+            <th>住所</th>
+            <th>電話番号</th>
         </tr>
         @foreach($items as $item)
         <tr>
-            <td>{{ $item->room_type_id }}</td>
-            <td>{{ $item->room_type }}</td>
-            <td>{{ $item->capacity }}</td>
-            <td>{{ $item->rooms }}</td>
-            {{-- <td>{{ $item->rooms->room_id }}</td> --}}
-            {{-- <td>{{ $item->rooms->[]->room_id }}</td> --}}
+            <td>{{ $item->reservation_id }}</td>
+            <td>{{ $item->number_of_people }}</td>
+            <td>{{ $item->check_in_day }}</td>
+            <td>{{ $item->check_out_day }}</td>
+            <td>{{ $item->user_id }}</td>
+            <td>{{ $item->users }}</td>
         </tr>
         @endforeach
     </table>

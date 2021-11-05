@@ -22,9 +22,8 @@ class Reservation extends Model
             'check_out_day' => 'required'
         );
     
-    // いらなくなった（後で消す）
-    // public function getData()
-    // {
-    //     return $this->reservation_id . ': ' . $this->number_of_people;
-    // }
+    // 従テーブルReservationから、主テーブルUserのレコードを取り出す
+    public function user(){
+        return $this->belongsTo('App\User','id','user_id');
+    }
 }

@@ -28,4 +28,10 @@ class ReservationController extends Controller
         $reservation->fill($form)->save();
         return redirect('/reservation');
     }
+
+    public function list(Request $request)
+    {
+        $items = Reservation::all();
+        return view('reservation.list',['items' => $items]);
+    }
 }
