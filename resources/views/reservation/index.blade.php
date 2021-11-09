@@ -26,16 +26,16 @@
 
     <table>
         <tr>
-            <th>利用者ID</th>
             <th>予約ID</th>
+            <th>利用者ID</th>
             <th>宿泊人数</th>
             <th>チェックイン</th>
             <th>チェックアウト</th>
         </tr>
         @foreach($items as $item)
         <tr>
-            <td>{{ $item->user_id }}</td>
             <td>{{ $item->reservation_id }}</td>
+            <td>{{ $item->user_id }}</td>
             <td>{{ $item->number_of_people }}</td>
             <td>{{ $item->check_in_day }}</td>
             <td>{{ $item->check_out_day }}</td>

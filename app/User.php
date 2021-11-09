@@ -17,12 +17,6 @@ class User extends Model
         'tel' => 'integer|min:0|max:150'
     );
 
-    // いらなくなった（後で消す）
-    // public function getData()
-    // {
-    //     return $this->id . ': ' . $this->name;
-    // }
-
     // Reservationテーブルのレコードを取り出せるようにする
     public function reservations()
     {

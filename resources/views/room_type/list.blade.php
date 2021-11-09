@@ -36,9 +36,8 @@
             <td>{{ $item->room_type_id }}</td>
             <td>{{ $item->room_type }}</td>
             <td>{{ $item->capacity }}</td>
-            <td>{{ $item->rooms }}</td>
-            {{-- <td>{{ $item->rooms->room_id }}</td> --}}
-            {{-- <td>{{ $item->rooms->[]->room_id }}</td> --}}
+            <td>{{ $item->rooms->first()->room_type_id }}</td>
+            <td>{{ $item->rooms->first()->room_number }}</td>
         </tr>
         @endforeach
     </table>

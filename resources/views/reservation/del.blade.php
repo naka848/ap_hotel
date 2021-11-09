@@ -1,10 +1,10 @@
 @extends('layouts.helloapp')
 
-@section('title','List.index')
+@section('title','Reservation.Delete')
 
 @section('menubar')
     @parent
-    予約／利用者一覧
+    予約取り消し
 @endsection
 
 @section('content')
@@ -24,31 +24,36 @@
 </nav>
 <br>
 
+    <form action="/person/del" method="post">
     <table>
+        @csrf
+        <input type="hidden" name="id" value="{{ $form->id }}">
         <tr>
             <th>予約ID</th>
-            <th>宿泊人数</th>
-            <th>チェックイン</th>
-            <th>チェックアウト</th>
-            <th>利用者ID</th>
-            <th>名前</th>
-            <th>住所</th>
-            <th>電話番号</th>
+            <td>{{ $form->reservation_id }}</td>
         </tr>
-        @foreach($items as $item)
         <tr>
-            <td>{{ $item->reservation_id }}</td>
-            <td>{{ $item->number_of_people }}</td>
-            <td>{{ $item->check_in_day }}</td>
-            <td>{{ $item->check_out_day }}</td>
-            <td>{{ $item->user_id }}</td>
-            <td>{{ $item->user->name }}</td>
-            <td>{{ $item->user->address }}</td>
-            <td>{{ $item->user->tel }}</td>
+            <th>利用者ID</th>
+            <td>{{ $form->user_id }}</td>
         </tr>
-        @endforeach
+        <tr>
+            <th>宿泊人数</th>
+            <td>{{ $form->number_of_people }}</td>
+        </tr>
+        <tr>
+            <th>チェックイン</th>
+            <td>{{ $form->check_in_day }}</td>
+        </tr>
+        <tr>
+            <th>チェックアウト</th>
+            <td>{{ $form->check_out_day }}</td>
+        </tr>
+        <tr>
+            <th></th>
+            <td><input type="submit" value="send"></td>
+        </tr>
     </table>
-    
+    </form>
 @endsection
 
 @section('footer')

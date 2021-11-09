@@ -29,6 +29,17 @@ class ReservationController extends Controller
         return redirect('/reservation');
     }
 
+    // public function delete(Request $request)
+    // {
+    //     $reservation = Reservation::find($request->id);
+    //     return view('reservation.del',['form' => $reservation]);
+    // }
+    // public function remove(Request $request)
+    // {
+    //     Reservation::find($request->id)->delete();
+    //     return redirect('/reservation');
+    // }
+
     public function list(Request $request)
     {
         $items = Reservation::all();
