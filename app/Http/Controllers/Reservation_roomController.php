@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Reservation;
-use App\Reservation_detail;
+use App\Reservation_room;
 use Illuminate\Http\Request;
 
-class Reservation_detailController extends Controller
+class Reservation_roomController extends Controller
 {
     public function index(Request $request)
     {

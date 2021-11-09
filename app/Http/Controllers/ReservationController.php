@@ -42,7 +42,23 @@ class ReservationController extends Controller
 
     public function list(Request $request)
     {
-        $items = Reservation::all();
+        // DBアクセス回数多い
+        // $items = Reservation::all();
+
+        // Eagerローディング
+        $items = Reservation::with('user')->get();
         return view('reservation.list',['items' => $items]);
+    }
+
+    public function list2(Request $request)
+    {
+        $items = Reservation::all();
+        // $items = Reservation::with('room')->get();
+        
+        // $変数 = モデルクラス::find(整数);
+        // IDによるレコード検索。主キーが「id」以外だとうまく動かない
+        // $items = Reservation::find(1);
+  
+        return view('reservation.list2',['items' => $items]);
     }
 }

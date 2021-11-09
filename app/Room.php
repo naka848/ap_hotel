@@ -8,4 +8,8 @@ class Room extends Model
 {
     // id以外の主キーを設定する
     protected $primarykey = 'room_id';
+
+    public function reservations(){
+        return $this->belongsToMany('App\Reservation','reservation_room','room_id','reservation_id');
+    }
 }
