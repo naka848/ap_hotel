@@ -52,7 +52,7 @@
             <td>{{ $room->room_type_id }}</td>
             <td>{{ $room->room_number }}</td>
             @endforeach
-            これでもかける  ※空のデータを含まなければ
+            {{-- これでもかける  ※空のデータを含まなければ --}}
             {{-- <td>{{ $item->rooms->first()->room_id }}</td> --}}
         </tr>
         @endforeach
