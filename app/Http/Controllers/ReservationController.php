@@ -29,17 +29,6 @@ class ReservationController extends Controller
         return redirect('/reservation');
     }
 
-    // public function delete(Request $request)
-    // {
-    //     $reservation = Reservation::find($request->id);
-    //     return view('reservation.del',['form' => $reservation]);
-    // }
-    // public function remove(Request $request)
-    // {
-    //     Reservation::find($request->id)->delete();
-    //     return redirect('/reservation');
-    // }
-
     public function list(Request $request)
     {
         // DBアクセス回数多い
@@ -60,5 +49,12 @@ class ReservationController extends Controller
         // $items = Reservation::find(1);
   
         return view('reservation.list2',['items' => $items]);
+    }
+
+    public function list3(Request $request)
+    {
+        $items = Reservation::all();
+  
+        return view('reservation.list3',['items' => $items]);
     }
 }
