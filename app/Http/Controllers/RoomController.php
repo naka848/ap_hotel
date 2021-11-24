@@ -12,4 +12,10 @@ class RoomController extends Controller
         $items = Room::all();
         return view('room.index',['items' => $items]);
     }
+
+    public function list(Request $request)
+    {
+        $items = Room::all();
+        return view('room.list',['items' => $items]);
+    }
 }

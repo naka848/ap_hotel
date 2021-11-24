@@ -22,4 +22,5 @@ Route::get('/room_type','Room_typeController@index');
 Route::get('/room_type/list','Room_typeController@list');
 
 Route::get('/room','RoomController@index');
+Route::get('/room/list','RoomController@list');
 
