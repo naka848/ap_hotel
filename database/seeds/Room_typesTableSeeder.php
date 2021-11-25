@@ -13,13 +13,13 @@ class Room_typesTableSeeder extends Seeder
     public function run()
     {
         $param = [
-            'room_type' => 'japanese_style_room',
+            'room_type' => '和室',
             'capacity' => 4,
         ];
         DB::table('room_types')->insert($param);
 
         $param = [
-            'room_type' => 'western_style_room',
+            'room_type' => '洋室',
             'capacity' => 2,
         ];
         DB::table('room_types')->insert($param);
