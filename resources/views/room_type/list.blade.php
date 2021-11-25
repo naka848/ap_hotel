@@ -4,7 +4,7 @@
 
 @section('menubar')
     @parent
-    部屋／部屋種別一覧
+    部屋種別／部屋一覧
 @endsection
 
 @section('content')
@@ -20,7 +20,8 @@
         <li><a href="{{ url('reservation/list2') }}">予約／部屋一覧（多対多）</a></li>
         <li><a href="{{ url('room') }}">部屋一覧</a></li>
         <li><a href="{{ url('room_type') }}">部屋種別一覧</a></li>
-        <li><a href="{{ url('room_type/list') }}">部屋／部屋種別一覧</a></li>
+        <li><a href="{{ url('room_type/list') }}">部屋種別／部屋一覧</a></li>
+        <li><a href="{{ url('room/list') }}">部屋／部屋種別一覧</a></li>
     </ul>
 </nav>
 <br>

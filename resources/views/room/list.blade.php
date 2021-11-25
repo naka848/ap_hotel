@@ -4,7 +4,7 @@
 
 @section('menubar')
     @parent
-    部屋種別／部屋一覧
+    部屋／部屋種別一覧
 @endsection
 
 @section('content')
