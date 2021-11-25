@@ -19,6 +19,7 @@
             <th>部屋ID</th>
             <th>部屋種別ID</th>
             <th>部屋番号</th>
+            <th>宿泊料金</th>
         </tr>
 
         {{-- $itemsのなかみ…ReservationDBからもってきたモデルがいっぱい入った配列 --}}
@@ -36,6 +37,7 @@
             <td>{{ $room->pivot->room_id }}</td>
             <td>{{ $room->room_type_id }}</td>
             <td>{{ $room->room_number }}</td>
+            <td>{{ $room->pivot->accommodation_fee }}円</td>
             @endforeach
             {{-- これでもかける  ※空のデータを含まなければ --}}
             {{-- <td>{{ $item->rooms->first()->room_id }}</td> --}}

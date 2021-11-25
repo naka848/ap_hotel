@@ -36,6 +36,8 @@ class Reservation extends Model
     // 第5引数…接続元モデル ID のカラム名
     // 第6引数…最終的な接続先モデル ID のカラム名
     public function rooms(){
-        return $this->belongsToMany('App\Room','reservation_room','reservation_id','room_id');
+        return $this->belongsToMany('App\Room','reservation_room','reservation_id','room_id')
+        ->withPivot('accommodation_fee');
     }
+
 }
