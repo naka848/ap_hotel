@@ -17,32 +17,6 @@
             <th>部屋種別</th>
             <th>宿泊可能人数</th>
         </tr>
-        {{-- @foreach($items as $item)
-            <tr>
-                <td>{{ $item->room_id }}</td>
-                <td>{{ $item->room_number }}</td>
-                <td>{{ $item->room_type_id }}</td>
-                <td>{{ $item->room_type->room_type }}</td>
-                <td>{{ $item->room_type->capacity }}</td>
-            </tr>
-        @endforeach --}}
-        
-        {{-- これだと２個めのFOREACHで予約されてる部屋のデータに絞られてしまう
-        @foreach($items as $item)
-            @foreach ($item->reservations as $reservation)
-                @if(empty($reservation->check_in_day))
-                    <tr>
-                        <td>{{ $item->room_id }}</td>
-                        <td>{{ $item->room_number }}</td>
-                        <td>{{ $item->room_type_id }}</td>
-                        <td>{{ $item->room_type->room_type }}</td>
-                        <td>{{ $item->room_type->capacity }}</td>
-                        <td>{{ $item }}</td>
-                        <td>{{ $reservation }}</td>
-                    </tr>
-                @endif
-            @endforeach
-        @endforeach --}}
 
         @foreach($items as $item)   
             @if(empty($item->reservations->first()->check_in_day))
