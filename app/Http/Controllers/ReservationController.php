@@ -51,10 +51,4 @@ class ReservationController extends Controller
         return view('reservation.list2',['items' => $items]);
     }
 
-    public function list3(Request $request)
-    {
-        $items = Reservation::all();
-  
-        return view('reservation.list3',['items' => $items]);
-    }
 }

@@ -4,7 +4,7 @@
 
 @section('menubar')
     @parent
-    部屋／部屋種別一覧
+    空室一覧
 @endsection
 
 @section('content')

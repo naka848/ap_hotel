@@ -14,7 +14,6 @@ Route::get('/reservation/add','ReservationController@add');
 Route::post('/reservation/add','ReservationController@create');
 Route::get('/reservation/list','ReservationController@list');
 Route::get('/reservation/list2','ReservationController@list2');
-Route::get('/reservation/list3','ReservationController@list3');
 
 Route::get('/reservation_detail','Reservation_detailController@index');
 
