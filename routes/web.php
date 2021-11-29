@@ -22,4 +22,6 @@ Route::get('/room_type/list','Room_typeController@list');
 
 Route::get('/room','RoomController@index');
 Route::get('/room/list','RoomController@list');
+Route::get('/room/find','RoomController@find');
+Route::post('/room/find','RoomController@search');
 
