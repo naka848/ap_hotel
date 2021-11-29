@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Room;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class RoomController extends Controller
 {
@@ -44,5 +45,35 @@ class RoomController extends Controller
         // うまくいかん。「Undefined variable」変数に値がないですよというエラーがでる
         // return view('room.list',compact($param,['items' => $items]));
 
+        // $itemsの中身は、Roomテーブルのすべてではなくてこっちで探したいやつ
+
     }
+
+
+
+
+
+
+
+    public function find2(Request $request)
+    {
+        return view('room.find2',['input' => '']);
+    }
+
+
+    // $itemsの中身を先に絞ってみる
+    // →ROOMテーブルにはnumber_of_peopleの項目がないので検索できなかった…このやり方はできないものなのか？
+    public function search2(Request $request)
+    {
+        // 送信フォームの値を保管
+        $param = [
+            'number_of_people' => $request->number_of_people,
+            'check_in_day' => $request->check_in_day,
+            'check_out_day' => $request->check_out_day,
+        ];
+        $items = DB::select('select * from rooms where number_of_people < :number_of_people',$param);
+        return view('room.list2',['items' => $items]);
+    }
+
+
 }

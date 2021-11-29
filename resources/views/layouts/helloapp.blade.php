@@ -73,6 +73,7 @@
             <li><a href="{{ url('room_type') }}">部屋種別一覧</a></li>
             <li><a href="{{ url('room_type/list') }}">部屋種別／部屋一覧</a></li>
             <li><a href="{{ url('room/find') }}">空室検索</a></li>
+            <li><a href="{{ url('room/find2') }}">空室検索2</a></li>
             <li><a href="{{ url('room/list') }}">空室一覧</a></li>          
         </ul>
     </nav>
