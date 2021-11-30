@@ -25,6 +25,7 @@ class RoomController extends Controller
         return view('room.find',['input' => '']);
     }
 
+    // -------------------viewsで検索してる方のリスト-------------------
     // 入力内容をLISTに渡したい
     // キー＝＞バリュー
     public function search(Request $request)
@@ -39,22 +40,13 @@ class RoomController extends Controller
         ];
         return view('room.list',$param);
 
-        // 引数が増えているがこの書き方でいいのか？？なんか通ってはいるかも？
-        // return view('room.list',$param,['items' => $items]);
-
-        // うまくいかん。「Undefined variable」変数に値がないですよというエラーがでる
-        // return view('room.list',compact($param,['items' => $items]));
-
-        // $itemsの中身は、Roomテーブルのすべてではなくてこっちで探したいやつ
-
     }
 
 
 
 
 
-
-
+    // -------------------controllerで検索してる方のリスト-------------------
     public function find2(Request $request)
     {
         return view('room.find2',['input' => '']);
@@ -65,13 +57,14 @@ class RoomController extends Controller
     // →ROOMテーブルにはnumber_of_peopleの項目がないので検索できなかった…このやり方はできないものなのか？
     public function search2(Request $request)
     {
-        // 送信フォームの値を保管
-        $param = [
-            'number_of_people' => $request->number_of_people,
-            'check_in_day' => $request->check_in_day,
-            'check_out_day' => $request->check_out_day,
-        ];
-        $items = DB::select('select * from rooms where number_of_people < :number_of_people',$param);
+        // // 送信フォームの値を保管
+        // $param = [
+        //     'number_of_people' => $request->number_of_people,
+        //     'check_in_day' => $request->check_in_day,
+        //     'check_out_day' => $request->check_out_day,
+        // ];
+        $items = DB::select('select * from rooms left outer join reservations');
+        // $items = DB::select('select * from rooms where number_of_people < :number_of_people',$param);
         return view('room.list2',['items' => $items]);
     }
 

@@ -20,11 +20,11 @@
 
         @foreach($items as $item)
         <tr>  
-                <td>{{ $item->room_id }}</td>
+                {{-- <td>{{ $item->room_id }}</td>
                 <td>{{ $item->room_number }}</td>
                 <td>{{ $item->room_type_id }}</td>
                 <td>{{ $item->room_type->room_type }}</td>
-                <td>{{ $item->room_type->capacity }}</td>
+                <td>{{ $item->room_type->capacity }}</td> --}}
                 <td>{{ $item }}</td>
         </tr>
         @endforeach
